@@ -1,4 +1,4 @@
-![Topology](Task%20OSPF%20Topology.jpeg)
+![Topology](Task%20OSPF%20Topology.jpg)
 
 ### Instructions:
 
