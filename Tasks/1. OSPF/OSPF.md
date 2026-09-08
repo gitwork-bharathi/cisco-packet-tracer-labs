@@ -15,7 +15,7 @@
 
 3. Do configure the basic configuration for Coimbatore & Chennai Routers and Bangalore & Delhi Switches. (Should use given name in the topology for Hostname for all devices)
 
-4. Configure enable password for Coimbatore & Chennai switches and Secret password for Bangalore & Delhi Switches. ("Enable Password should be the first four digits of your mobile no and Secret Password should be the first four letters of your name" ) Note: Encrypt the non-encrypted passwords
+4. Configure enable password for Coimbatore & Chennai switches and Secret password for Bangalore & Delhi Switches. ("Enable Password should be the first four digits of your mobile no and Secret Password should be the first four letters of your name") Note: Encrypt the non-encrypted passwords
 
 5. Assign first valid IP for all the router and second valid IP for all the switches based on their respective networks.
 
@@ -28,3 +28,4 @@
 9. Verify the connectivity between different LAN networks.
 
 10. Copy the configuration of all the routers and switches from RAM to NVRAM.
+
