@@ -43,6 +43,7 @@ Router-Dest(config)# access-list 10 deny host 192.168.10.3
 Router-Dest(config)# access-list 10 permit any
 Router-Dest(config)# interface GigabitEthernet0/0/0
 Router-Dest(config-if)# ip access-group 10 out
+```
 
 ### 2. Extended ACL Implementation (Right Topology)
 Extended ACLs (100-199) inspect source IP, destination IP, and Layer 4 protocol ports (tcp/udp/icmp). They are placed closest to the source to drop unauthorized traffic immediately, preserving WAN bandwidth.
@@ -56,7 +57,7 @@ Router-Source(config)# access-list 100 deny tcp host 192.168.10.4 host 192.168.2
 Router-Source(config)# access-list 100 permit ip any any
 Router-Source(config)# interface GigabitEthernet0/0/0
 Router-Source(config-if)# ip access-group 100 in
-
+```
 ## 🔍 Comparative Protocol Analysis
 
 | Evaluation Metric | Standard ACL | Extended ACL |

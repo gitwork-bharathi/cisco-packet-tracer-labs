@@ -46,7 +46,7 @@ Router(config)# ip nat inside source static 192.168.50.3 30.0.0.1
 Router(config)# ip nat inside source static 192.168.50.4 30.0.0.2
 Router(config)# ip nat inside source static 192.168.50.5 30.0.0.3
 Router(config)# ip nat inside source static 192.168.50.6 30.0.0.4
-
+```
 ### 2. Dynamic NAT (Pooled Address Allocation)
 Uses a defined pool of public addresses (30.0.0.1 - 30.0.0.2) assigned dynamically to internal hosts permitted by an Access Control List. Only two hosts can access the internet simultaneously:
 
@@ -71,7 +71,7 @@ Router(config-if)# ip nat outside
 
 Router(config)# access-list 1 permit 192.168.50.0 0.0.0.7
 Router(config)# ip nat inside source list 1 interface Serial0/1/0 overload
-
+```
 ## 🔍 Comparative Analysis
 | Feature | Static NAT | Dynamic NAT | PAT |
 | :--- | :--- | :--- | :--- |

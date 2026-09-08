@@ -40,18 +40,18 @@ Every destination network is explicitly defined in each router's routing table u
   ip route 192.168.20.0 255.255.255.248 192.168.100.2
   ip route 192.168.30.0 255.255.255.248 192.168.100.2
   ip route 192.168.200.0 255.255.255.252 192.168.100.2
-
+  ```
 * **Router B (Transit Site):**
   ```text
   ip route 192.168.10.0 255.255.255.248 192.168.100.1
   ip route 192.168.30.0 255.255.255.248 192.168.200.2
-  
+  ```
 * **Router C (Stub Site):**
   ```text
   ip route 192.168.10.0 255.255.255.248 192.168.200.1
   ip route 192.168.20.0 255.255.255.248 192.168.200.1
   ip route 192.168.100.0 255.255.255.252 192.168.200.1
-  
+  ```
 ### Phase 2: Default Static Routing (Table Reduction)
 ![Default Static Routing](Default%20Static%20Routing%20Protocol.png)
 
@@ -60,19 +60,19 @@ Reduces memory consumption and routing table size on stub and transit routers by
 * **Router A (Relies strictly on a default route pointing to Router B):**
   ```text
   ip route 0.0.0.0 0.0.0.0 192.168.100.2
-  
+  ```
 * **Router B (Retains a static path to LAN A, with a default route forwarding all outside traffic to Router C):**
   ```text
   ip route 192.168.10.0 255.255.255.248 192.168.100.1
   ip route 0.0.0.0 0.0.0.0 192.168.200.2
-  
+  ```
 * **Router C (Routes internal corporate traffic back into LAN A/B and injects a default route to the ISP):**
   ```text
   ip route 192.168.10.0 255.255.255.248 192.168.200.1
   ip route 192.168.20.0 255.255.255.248 192.168.200.1
   ip route 192.168.100.0 255.255.255.252 192.168.200.1
   ip route 0.0.0.0 0.0.0.0 100.0.0.2
-  
+  ```
 ### Phase 3: Dynamic Routing with Single-Area OSPFv2
 ![Dynamic Routing Protocol - OSPF](Dynamic%20Routing%20Protocol%20-%20OSPF.png)
 
@@ -85,7 +85,7 @@ Replaces manual static route administration with link-state dynamic discovery ov
   network 192.168.10.0 0.0.0.7 area 0
   network 192.168.100.0 0.0.0.3 area 0
   passive-interface GigabitEthernet0/0/0
-
+  ```
 * **Router B:**
   ```text
   router ospf 1
@@ -94,7 +94,7 @@ Replaces manual static route administration with link-state dynamic discovery ov
   network 192.168.100.0 0.0.0.3 area 0
   network 192.168.200.0 0.0.0.3 area 0
   passive-interface GigabitEthernet0/0/0
-
+  ```
 * **Router C:**
   ```text
   router ospf 1
@@ -102,7 +102,7 @@ Replaces manual static route administration with link-state dynamic discovery ov
   network 192.168.30.0 0.0.0.7 area 0
   network 192.168.200.0 0.0.0.3 area 0
   passive-interface GigabitEthernet0/0/0
-
+  ```
 ## 🔍 Comparative Analysis: Static vs. Default vs. Dynamic
 
 | Metric / Feature | Standard Static | Default Static | Dynamic (OSPF) |
