@@ -59,7 +59,7 @@ Router(config-if)# ip nat outside
 Router(config)# access-list 1 permit 192.168.50.0 0.0.0.7
 Router(config)# ip nat pool DYN_POOL 30.0.0.1 30.0.0.2 netmask 255.255.255.0
 Router(config)# ip nat inside source list 1 pool DYN_POOL
-
+```
 ### 3. Port Address Translation / PAT (Overload)
 Multiplexes all internal hosts through a single public exit interface IP (Serial0/1/0 or a single global IP) using Layer 4 source port numbers, maximizing public IPv4 conservation:
 
