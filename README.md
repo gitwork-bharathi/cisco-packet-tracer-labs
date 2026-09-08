@@ -29,7 +29,7 @@ A collection of network design, configuration, and troubleshooting simulations b
 
 ## 📂 Featured Project: Enterprise Multi-Site Branch Network
 
-The capstone project inside `enterprise-capstone/multi-site-enterprise-network` models an enterprise connecting four branches (Coimbatore, Chennai, Bangalore, and Delhi) across an ISP edge:
+The capstone project inside `multi-site-enterprise-network` models an enterprise connecting four branches (Coimbatore, Chennai, Bangalore, and Delhi) across an ISP edge:
 
 * **Efficient Addressing:** Implements a strict VLSM scheme derived from a `192.168.x.0/24` block, sizing subnets specifically for host counts of 55, 25, 11, and 9 hosts.
 * **Granular Access Rules:** Enforces inter-departmental security policies, including isolating specific hosts across regions and blocking select hosts from reaching internal web servers while permitting standard ping verification.
